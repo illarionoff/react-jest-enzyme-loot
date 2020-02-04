@@ -4,8 +4,13 @@ import App from "./App";
 
 import { findByTextAttr } from "./test/testUtils";
 
-test("renders without error", () => {
+describe("App component", () => {
   const app = shallow(<App />);
-  const wrapper = findByTextAttr(app, "app-component");
-  expect(wrapper.length).toEqual(1);
+  test("renders without error", () => {
+    const wrapper = findByTextAttr(app, "app-component");
+    expect(wrapper.length).toEqual(1);
+  });
+  it("contains connected Wallet component", () => {
+    expect(app.find("Connect(Wallet)").exists()).toBe(true);
+  });
 });

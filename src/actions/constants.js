@@ -1,0 +1,3 @@
+export const SET_BALANCE = "SET_BALANCE";
+export const ADD_BALANCE = "ADD_BALANCE";
+export const SUBTRACT_BALANCE = "SUBTRACT_BALANCE";
