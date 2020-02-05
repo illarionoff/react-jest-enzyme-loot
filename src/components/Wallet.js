@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addBalance } from "../actions/balance";
+import { addBalance, subtractBalance } from "../actions/balance";
 
 export class Wallet extends Component {
   state = {
@@ -37,7 +37,7 @@ export class Wallet extends Component {
           Add
         </button>
         <button data-test="subtract-button" onClick={this.subtractBalance}>
-          Add
+          Subtract
         </button>
       </div>
     );
@@ -49,4 +49,6 @@ function mapStateToProps(state) {
   return { balance };
 }
 
-export default connect(mapStateToProps, { addBalance })(Wallet);
+export default connect(mapStateToProps, { addBalance, subtractBalance })(
+  Wallet
+);
